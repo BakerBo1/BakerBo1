@@ -149,20 +149,11 @@ local visualToggle = Section1_Tab4:AddToggle({
     Name = "Stretched Resolution",
     Default = false,
     Callback = function(Value)
-        -- Put your code here to enable or disable stretched resolution based on the toggle value
+        -- Execute the script for stretched resolution when the toggle is turned on
         if Value then
-            -- Load and execute the script for stretched resolution
             local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/StretchedRes1/main/Stretched.Res.BakerBoi384"
-            local script = loadstring(game:HttpGet(scriptUrl))
-            if script then
-                script()
-                print("Stretched Resolution script loaded and executed")
-            else
-                warn("Failed to load Stretched Resolution script")
-            end
-        else
-            -- You can add code here to clean up or revert any changes made by the script
-            print("Stretched Resolution disabled")
+            loadstring(game:HttpGet(scriptUrl))()
+            print("Stretched Resolution script executed")
         end
     end
 })
