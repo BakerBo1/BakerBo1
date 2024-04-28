@@ -144,38 +144,26 @@ Section2_Tab3:AddColorpicker({
     end
 })
 
--- Function to make the top part of the GUI draggable for phones
-local function makeDraggable(window)
-    local topFrame = window.Frame
+-- Add sections to Tab Four (Visual)
+local Section1_Tab4 = Tab4:AddSection({
+    Name = "Section 1 - Tab Four"
+})
 
-    local isDragging = false
-    local startPosition = UDim2.new()
-    local startDragPosition = Vector2.new()
-
-    topFrame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch then
-            isDragging = true
-            startDragPosition = input.Position
-            startPosition = window.Position
+-- Add a toggle for the Visual section
+local visualToggle = Section1_Tab4:AddToggle({
+    Name = "Stretched Resolution",
+    Default = false,
+    Callback = function(Value)
+        -- Put your code here to enable or disable stretched resolution based on the toggle value
+        if Value then
+            -- Enable stretched resolution
+            print("Stretched Resolution enabled")
+        else
+            -- Disable stretched resolution
+            print("Stretched Resolution disabled")
         end
-    end)
-
-    topFrame.InputChanged:Connect(function(input)
-        if isDragging and input.UserInputType == Enum.UserInputType.Touch then
-            local delta = input.Position - startDragPosition
-            window.Position = startPosition + UDim2.new(0, delta.X, 0, delta.Y)
-        end
-    end)
-
-    topFrame.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch then
-            isDragging = false
-        end
-    end)
-end
-
--- Make the top part of the GUI draggable
-makeDraggable(Window)
+    end
+})
 
 
 -- Initialize the Orion Library
