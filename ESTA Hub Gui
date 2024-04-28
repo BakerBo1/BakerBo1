@@ -1,6 +1,49 @@
 -- Load the Orion Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+-- Define variables for GUI dragging
+local UserInputService = game:GetService("UserInputService")
+local guiDragging = false
+local guiStartPosition = nil
+local guiOffset = nil
+
+-- Function to handle GUI dragging
+local function startDragging(input)
+    guiDragging = true
+    guiStartPosition = Window.Position
+    guiOffset = input.Position - Window.Position
+end
+
+local function stopDragging()
+    guiDragging = false
+end
+
+local function updateDragging(input)
+    if guiDragging then
+        Window.Position = UDim2.new(0, input.Position.X - guiOffset.X, 0, input.Position.Y - guiOffset.Y)
+    end
+end
+
+-- Add touch input listeners for GUI dragging
+UserInputService.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        startDragging(input)
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        updateDragging(input)
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        stopDragging()
+    end
+end)
+
+
 -- Create a window
 local Window = OrionLib:MakeWindow({
     Name = "Esta Hub - BakerBoi384",
