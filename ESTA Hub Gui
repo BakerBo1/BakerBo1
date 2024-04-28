@@ -15,43 +15,6 @@ local Tab1 = Window:MakeTab({
     PremiumOnly = false
 })
 
--- Make the top part of the GUI draggable for phones
-local function makeDraggable(frame)
-    -- Dragging variables
-    local isDragging = false
-    local startPosition = UDim2.new()
-    local startDragPosition = Vector2.new()
-
-    -- Dragging functions
-    frame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch then
-            isDragging = true
-            startDragPosition = input.Position
-            startPosition = frame.Parent.Position
-        end
-    end)
-
-    frame.InputChanged:Connect(function(input)
-        if isDragging and input.UserInputType == Enum.UserInputType.Touch then
-            local delta = input.Position - startDragPosition
-            frame.Parent.Position = startPosition + UDim2.new(0, delta.X, 0, delta.Y)
-        end
-    end)
-
-    frame.InputEnded:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.Touch then
-            isDragging = false
-        end
-    end)
-end
-
--- Find the top frame of your GUI (adjust this as needed based on your GUI structure)
-local topFrame = Window.Frame
-
--- Make the top frame draggable
-makeDraggable(topFrame)
-
-
 local Tab2 = Window:MakeTab({
     Name = "Visual",
     Icon = "rbxassetid://4483345998",
@@ -180,6 +143,46 @@ Section2_Tab3:AddColorpicker({
         print("Colorpicker 1 value changed to:", Value)
     end
 })
+
+-- Function to make the top part of the GUI draggable for phones
+local function makeDraggable(frame)
+    -- Dragging variables
+    local isDragging = false
+    local startPosition = UDim2.new()
+    local startDragPosition = Vector2.new()
+
+    -- Dragging functions
+    frame.InputBegan:Connect(function(input)
+        print("Input began")
+        if input.UserInputType == Enum.UserInputType.Touch then
+            isDragging = true
+            startDragPosition = input.Position
+            startPosition = frame.Parent.Position
+        end
+    end)
+
+    frame.InputChanged:Connect(function(input)
+        print("Input changed")
+        if isDragging and input.UserInputType == Enum.UserInputType.Touch then
+            local delta = input.Position - startDragPosition
+            frame.Parent.Position = startPosition + UDim2.new(0, delta.X, 0, delta.Y)
+        end
+    end)
+
+    frame.InputEnded:Connect(function(input)
+        print("Input ended")
+        if input.UserInputType == Enum.UserInputType.Touch then
+            isDragging = false
+        end
+    end)
+end
+
+-- Find the top frame of your GUI (adjust this as needed based on your GUI structure)
+local topFrame = Window.Frame
+
+-- Make the top frame draggable
+makeDraggable(topFrame)
+
 
 -- Initialize the Orion Library
 OrionLib:Init()
