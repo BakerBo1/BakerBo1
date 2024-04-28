@@ -50,7 +50,7 @@ local Section2_Tab1 = Tab1:AddSection({
 
 -- Add UI elements to Tab One sections
 Section1_Tab1:AddToggle({
-    Name = "Toggle 1 - Section 2",
+    Name = "No Clip",
     Default = false,
     Callback = function(Value)
         print("Toggle 1 value changed to:", Value)
@@ -58,7 +58,7 @@ Section1_Tab1:AddToggle({
 })
 
 Section2_Tab1:AddToggle({
-    Name = "Toggle 1 - Section 2",
+    Name = "No Recoil",
     Default = false,
     Callback = function(Value)
         print("Toggle 1 value changed to:", Value)
