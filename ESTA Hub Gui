@@ -144,6 +144,11 @@ Section2_Tab3:AddColorpicker({
     end
 })
 
+-- Add sections to Tab Four (Visual)
+local Section1_Tab4 = Tab4:AddSection({
+    Name = "Section 1 - Visual"
+})
+
 -- Add a toggle for the Visual section
 local visualToggle = Section1_Tab4:AddToggle({
     Name = "Stretched Resolution",
