@@ -27,6 +27,18 @@ local Tab3 = Window:MakeTab({
     PremiumOnly = false
 })
 
+local Tab4 = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Tab5 = Window:MakeTab({
+    Name = "Misc",
+    Icon = "rbxassetid://rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
 -- Add sections to Tab One
 local Section1_Tab1 = Tab1:AddSection({
     Name = "Section 1 - Tab One"
