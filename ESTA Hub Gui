@@ -53,9 +53,15 @@ Section1_Tab1:AddToggle({
     Name = "No Clip",
     Default = false,
     Callback = function(Value)
-        print("Toggle 1 value changed to:", Value)
+        if Value then
+            -- Load and execute the script for No Clip
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/No-clip/main/No%20clip", true))()
+        else
+            -- Optionally, add code here to disable No Clip if needed
+        end
     end
 })
+
 
 Section2_Tab1:AddToggle({
     Name = "No Recoil",
