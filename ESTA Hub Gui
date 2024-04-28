@@ -49,10 +49,11 @@ local Section2_Tab1 = Tab1:AddSection({
 })
 
 -- Add UI elements to Tab One sections
-Section1_Tab1:AddButton({
-    Name = "Button 1 - Section 1",
-    Callback = function()
-        print("Button 1 clicked in Section 1 of Tab One")
+Section1_Tab1:AddToggle({
+    Name = "Toggle 1 - Section 2",
+    Default = false,
+    Callback = function(Value)
+        print("Toggle 1 value changed to:", Value)
     end
 })
 
