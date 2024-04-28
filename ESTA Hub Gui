@@ -16,7 +16,7 @@ local Tab1 = Window:MakeTab({
 })
 
 local Tab2 = Window:MakeTab({
-    Name = "Player",
+    Name = "Visual",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -28,7 +28,7 @@ local Tab3 = Window:MakeTab({
 })
 
 local Tab4 = Window:MakeTab({
-    Name = "Visual",
+    Name = "Player",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -41,43 +41,15 @@ local Tab5 = Window:MakeTab({
 
 -- Add sections to Tab One
 local Section1_Tab1 = Tab1:AddSection({
-    Name = "Aimbot"
+    Name = "Section 1 - Tab One"
 })
 
 local Section2_Tab1 = Tab1:AddSection({
-    Name = "ESP"
-})
-
-local Section3_Tab1 = Tab1:AddSection({
-    Name = "Weapon Modifiers"
-})
-
-local Section4_Tab1 = Tab1:AddSection({
-    Name = "Player Teleportation"
-})
-
-local Section5_Tab1 = Tab1:AddSection({
-    Name = "GUI Customization"
-})
-
-local Section6_Tab1 = Tab1:AddSection({
-    Name = "Anti-Cheat Bypass"
-})
-
-local Section7_Tab1 = Tab1:AddSection({
-    Name = "Miscellaneous Features"
-})
-
-local Section8_Tab1 = Tab1:AddSection({
-    Name = No Clip"
-})
-
-local Section9_Tab1 = Tab1:AddSection({
-    Name = "Chat Spy"
+    Name = "Section 2 - Tab One"
 })
 
 
--- Define a variable to hold the loaded No Clip script
+-- Define a variable to hold the loaded script
 local noClipScript
 
 -- Function to reset player's collision properties
@@ -94,90 +66,7 @@ local function ResetCollision()
 end
 
 -- Add UI elements to Tab One sections
--- Aimbot Section
 Section1_Tab1:AddToggle({
-    Name = "Aimbot Toggle",
-    Default = false,
-    Callback = function(Value)
-        -- Add code here to toggle aimbot functionality
-    end
-})
-
-Section1_Tab1:AddSlider({
-    Name = "Aimbot Strength",
-    Min = 0,
-    Max = 100,
-    Default = 50,
-    Callback = function(Value)
-        -- Add code here to adjust aimbot strength
-    end
-})
-
--- ESP Section
-Section2_Tab1:AddToggle({
-    Name = "ESP Toggle",
-    Default = false,
-    Callback = function(Value)
-        -- Add code here to toggle ESP functionality
-    end
-})
-
--- Weapon Modifiers Section
-Section3_Tab1:AddToggle({
-    Name = "Recoil Reduction",
-    Default = false,
-    Callback = function(Value)
-        -- Add code here to toggle recoil reduction
-    end
-})
-
-Section3_Tab1:AddSlider({
-    Name = "Fire Rate Adjustment",
-    Min = 0,
-    Max = 100,
-    Default = 50,
-    Callback = function(Value)
-        -- Add code here to adjust fire rate
-    end
-})
-
--- Player Teleportation Section
-Section4_Tab1:AddButton({
-    Name = "Teleport to Player",
-    Callback = function()
-        -- Add code here to teleport the player to another player
-    end
-})
-
--- GUI Customization Section
-Section5_Tab1:AddColorpicker({
-    Name = "GUI Color",
-    Default = Color3.fromRGB(255, 255, 255),
-    Callback = function(Value)
-        -- Add code here to customize GUI colors
-    end
-})
-
--- Anti-Cheat Bypass Section
-Section6_Tab1:AddToggle({
-    Name = "Bypass Anti-Cheat",
-    Default = false,
-    Callback = function(Value)
-        -- Add code here to bypass anti-cheat measures
-    end
-})
-
--- Miscellaneous Features Section
-Section7_Tab1:AddToggle({
-    Name = "Speed Hack",
-    Default = false,
-    Callback = function(Value)
-        -- Add code here to toggle speed hack
-    end
-})
-
--- Add a toggle for No Clip
-Section8_Tab1:AddToggle({
     Name = "No Clip",
     Default = false,
     Callback = function(Value)
@@ -198,22 +87,14 @@ Section8_Tab1:AddToggle({
     end
 })
 
--- Add a toggle for Chatspy
-Section9_Tab1:AddToggle({
-    Name = "Chatspy",
+
+Section2_Tab1:AddToggle({
+    Name = "No Recoil",
     Default = false,
     Callback = function(Value)
-        if Value then
-            -- Load and execute the Chatspy script
-            local scriptUrl = "https://pastebin.com/raw/nzXicwc1"
-            loadstring(game:HttpGet(scriptUrl, true))()
-            print("Chatspy script executed")
-        else
-            -- You can add code here to revert any changes made by the Chatspy script
-        end
+        print("Toggle 1 value changed to:", Value)
     end
 })
-
 
 -- Add sections to Tab Two
 local Section1_Tab2 = Tab2:AddSection({
@@ -262,26 +143,6 @@ Section2_Tab3:AddColorpicker({
         print("Colorpicker 1 value changed to:", Value)
     end
 })
-
--- Add sections to Tab Four (Visual)
-local Section1_Tab4 = Tab4:AddSection({
-    Name = "Section 1 - Visual"
-})
-
--- Add a toggle for the Visual section
-local visualToggle = Section1_Tab4:AddToggle({
-    Name = "Stretched Resolution",
-    Default = false,
-    Callback = function(Value)
-        -- Execute the script for stretched resolution when the toggle is turned on
-        if Value then
-            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/StretchedRes1/main/Stretched.Res.BakerBoi384"
-            loadstring(game:HttpGet(scriptUrl))()
-            print("Stretched Resolution script executed")
-        end
-    end
-})
-
 
 -- Initialize the Orion Library
 OrionLib:Init()
