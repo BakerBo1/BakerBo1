@@ -51,6 +51,22 @@ local Section2_Tab1 = Tab1:AddSection({
 -- Define a variable to hold the loaded script
 local noClipScript
 
+-- Define a variable to hold the loaded script
+local noClipScript
+
+-- Function to reset player's collision properties
+local function ResetCollision()
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    if character then
+        for _, part in ipairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = true
+            end
+        end
+    end
+end
+
 -- Add UI elements to Tab One sections
 Section1_Tab1:AddToggle({
     Name = "No Clip",
@@ -67,6 +83,8 @@ Section1_Tab1:AddToggle({
         else
             -- Disable the loaded No Clip script
             noClipScript = nil
+            -- Reset player's collision properties
+            ResetCollision()
         end
     end
 })
