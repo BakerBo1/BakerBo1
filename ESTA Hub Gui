@@ -23,19 +23,19 @@ local Tab2 = Window:MakeTab({
 
 local Tab3 = Window:MakeTab({
     Name = "Lock/Esp",
-    Icon = "rbxassetid://rbxassetid://4483345998",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local Tab4 = Window:MakeTab({
     Name = "Player",
-    Icon = "rbxassetid://rbxassetid://4483345998",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local Tab5 = Window:MakeTab({
     Name = "Misc",
-    Icon = "rbxassetid://rbxassetid://4483345998",
+    Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
