@@ -144,11 +144,6 @@ Section2_Tab3:AddColorpicker({
     end
 })
 
--- Add sections to Tab Four (Visual)
-local Section1_Tab4 = Tab4:AddSection({
-    Name = "Section 1 - Tab Four"
-})
-
 -- Add a toggle for the Visual section
 local visualToggle = Section1_Tab4:AddToggle({
     Name = "Stretched Resolution",
@@ -156,10 +151,17 @@ local visualToggle = Section1_Tab4:AddToggle({
     Callback = function(Value)
         -- Put your code here to enable or disable stretched resolution based on the toggle value
         if Value then
-            -- Enable stretched resolution
-            print("Stretched Resolution enabled")
+            -- Load and execute the script for stretched resolution
+            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/StretchedRes1/main/Stretched.Res.BakerBoi384"
+            local script = loadstring(game:HttpGet(scriptUrl))
+            if script then
+                script()
+                print("Stretched Resolution script loaded and executed")
+            else
+                warn("Failed to load Stretched Resolution script")
+            end
         else
-            -- Disable stretched resolution
+            -- You can add code here to clean up or revert any changes made by the script
             print("Stretched Resolution disabled")
         end
     end
