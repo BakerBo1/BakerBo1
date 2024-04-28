@@ -16,7 +16,7 @@ local Tab1 = Window:MakeTab({
 })
 
 local Tab2 = Window:MakeTab({
-    Name = "Visual",
+    Name = "Player",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -28,7 +28,7 @@ local Tab3 = Window:MakeTab({
 })
 
 local Tab4 = Window:MakeTab({
-    Name = "Player",
+    Name = "Visual",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
@@ -41,11 +41,11 @@ local Tab5 = Window:MakeTab({
 
 -- Add sections to Tab One
 local Section1_Tab1 = Tab1:AddSection({
-    Name = "Section 1 - Tab One"
+    Name = ""
 })
 
 local Section2_Tab1 = Tab1:AddSection({
-    Name = "Section 2 - Tab One"
+    Name = ""
 })
 
 
