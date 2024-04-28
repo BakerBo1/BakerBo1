@@ -16,24 +16,30 @@ local Tab1 = Window:MakeTab({
 })
 
 local Tab2 = Window:MakeTab({
-    Name = "Player",
+    Name = "Target",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local Tab3 = Window:MakeTab({
-    Name = "Lock/Esp",
+    Name = "Player",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local Tab4 = Window:MakeTab({
+    Name = "Lock/Esp",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Tab5= Window:MakeTab({
     Name = "Visual",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Tab5 = Window:MakeTab({
+local Tab6= Window:MakeTab({
     Name = "Misc",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -208,46 +214,48 @@ Section7_Tab1:AddToggle({
 
 
 -- Add sections to Tab Two
-local Section1_Tab2 = Tab2:AddSection({
-    Name = "Section 1 - Tab Two"
+local Section1_Tab3 = Tab2:AddSection({
+    Name = "Section 1 - Tab Three"
 })
 
-local Section2_Tab2 = Tab2:AddSection({
-    Name = "Section 2 - Tab Two"
+local Section2_Tab3 = Tab2:AddSection({
+    Name = "Section  - Tab Three"
 })
 
 -- Add UI elements to Tab Two sections
-Section1_Tab2:AddSlider({
-    Name = "Slider 1 - Section 1",
+Section1_Tab3:AddSlider({
+    Name = "Player Speed",
     Min = 0,
-    Max = 100,
-    Default = 50,
+    Max = 1000,
+    Default = 250,
     Callback = function(Value)
         print("Slider 1 value changed to:", Value)
     end
 })
 
-Section2_Tab2:AddTextbox({
-    Name = "Textbox 1 - Section 2",
-    Default = "Enter text here",
+Section2_Tab3:AddSlider({
+    Name = "Jump Power",
+    Min = 0,
+    Max = 500,
+    Default = 100,
     Callback = function(Value)
-        print("Textbox 1 value changed to:", Value)
+        print("Slider 1 value changed to:", Value)
     end
 })
 
--- Add sections to Tab Three
-local Section1_Tab3 = Tab3:AddSection({
-    Name = "Section 1 - Tab Three"
+-- Add sections to Tab Four
+local Section1_Tab4 = Tab3:AddSection({
+    Name = "Section 1 - Tab Four"
 })
 
 local Section2_Tab3 = Tab3:AddSection({
-    Name = "Section 2 - Tab Three"
+    Name = "Section 2 - Tab Four"
 })
 
 -- Add UI elements to Tab Three sections
 Section1_Tab3:AddLabel("Label 1 - Section 1")
 
-Section2_Tab3:AddColorpicker({
+Section2_Tab4:AddColorpicker({
     Name = "Colorpicker 1 - Section 2",
     Default = Color3.fromRGB(255, 0, 0),
     Callback = function(Value)
