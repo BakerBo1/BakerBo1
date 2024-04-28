@@ -48,6 +48,10 @@ local Section2_Tab1 = Tab1:AddSection({
     Name = ""
 })
 
+local Section3_Tab1 = Tab1:AddSection({
+    Name = ""
+})
+
 
 -- Define a variable to hold the loaded script
 local noClipScript
