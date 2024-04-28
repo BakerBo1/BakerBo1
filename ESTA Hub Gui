@@ -48,6 +48,9 @@ local Section2_Tab1 = Tab1:AddSection({
     Name = "Section 2 - Tab One"
 })
 
+-- Define a variable to hold the loaded script
+local noClipScript
+
 -- Add UI elements to Tab One sections
 Section1_Tab1:AddToggle({
     Name = "No Clip",
@@ -55,9 +58,15 @@ Section1_Tab1:AddToggle({
     Callback = function(Value)
         if Value then
             -- Load and execute the script for No Clip
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/No-clip/main/No%20clip", true))()
+            noClipScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/No-clip/main/No%20clip", true))
+            if noClipScript then
+                noClipScript()
+            else
+                warn("Failed to load No Clip script")
+            end
         else
-            -- Optionally, add code here to disable No Clip if needed
+            -- Disable the loaded No Clip script
+            noClipScript = nil
         end
     end
 })
