@@ -152,7 +152,7 @@ Section5_Tab1:AddColorpicker({
 
 -- Anti-Cheat Bypass Section
 Section6_Tab1:AddToggle({
-    Name = "Bypass Anti-Cheat",
+    Name = Chat-Bypass",
     Default = false,
     Callback = function(Value)
         -- Add code here to bypass anti-cheat measures
@@ -161,7 +161,7 @@ Section6_Tab1:AddToggle({
 
 -- Miscellaneous Features Section
 Section7_Tab1:AddToggle({
-    Name = "Speed Hack",
+    Name = "Fly",
     Default = false,
     Callback = function(Value)
         -- Add code here to toggle speed hack
