@@ -1,49 +1,6 @@
 -- Load the Orion Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
--- Define variables for GUI dragging
-local UserInputService = game:GetService("UserInputService")
-local guiDragging = false
-local guiStartPosition = nil
-local guiOffset = nil
-
--- Function to handle GUI dragging
-local function startDragging(input)
-    guiDragging = true
-    guiStartPosition = Window.Position
-    guiOffset = input.Position - Window.Position
-end
-
-local function stopDragging()
-    guiDragging = false
-end
-
-local function updateDragging(input)
-    if guiDragging then
-        Window.Position = UDim2.new(0, input.Position.X - guiOffset.X, 0, input.Position.Y - guiOffset.Y)
-    end
-end
-
--- Add touch input listeners for GUI dragging
-UserInputService.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Touch then
-        startDragging(input)
-    end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Touch then
-        updateDragging(input)
-    end
-end)
-
-UserInputService.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.Touch then
-        stopDragging()
-    end
-end)
-
-
 -- Create a window
 local Window = OrionLib:MakeWindow({
     Name = "Esta Hub - BakerBoi384",
@@ -184,3 +141,75 @@ Section2_Tab3:AddColorpicker({
 
 -- Initialize the Orion Library
 OrionLib:Init()
+
+-- Initialize the Orion Library
+OrionLib:Init()
+
+-- Add sections to Tab One
+local Section1_Tab1 = Tab1:AddSection({
+    Name = "Section 1 - Tab One"
+})
+
+-- Define variables for GUI dragging
+local guiDragging = false
+local guiStartPosition = nil
+local guiOffset = nil
+
+-- Function to handle GUI dragging
+local function startDragging(input)
+    guiDragging = true
+    guiStartPosition = Window.Position
+    guiOffset = input.Position - Window.Position
+end
+
+local function stopDragging()
+    guiDragging = false
+end
+
+local function updateDragging(input)
+    if guiDragging then
+        Window.Position = UDim2.new(0, input.Position.X - guiOffset.X, 0, input.Position.Y - guiOffset.Y)
+    end
+end
+
+-- Add touch input listeners for GUI dragging
+Window.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch and input.Position.Y < 30 then
+        startDragging(input)
+    end
+end)
+
+Window.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        updateDragging(input)
+    end
+end)
+
+Window.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.Touch then
+        stopDragging()
+    end
+end)
+
+-- Add UI elements to Tab One sections
+Section1_Tab1:AddToggle({
+    Name = "No Clip",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Load and execute the script for No Clip
+            noClipScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/No-clip/main/No%20clip", true))
+            if noClipScript then
+                noClipScript()
+            else
+                warn("Failed to load No Clip script")
+            end
+        else
+            -- Disable the loaded No Clip script
+            noClipScript = nil
+            -- Reset player's collision properties
+            ResetCollision()
+        end
+    end
+})
+
