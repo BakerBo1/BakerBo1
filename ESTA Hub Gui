@@ -1,30 +1,6 @@
 -- Load the Orion Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
--- Define variables to hold the loaded scripts
-local speedScript
-local superSpeedScript
-
--- Function to load and execute the Speed script
-local function loadSpeedScript()
-    speedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/Speed-ESTA/main/Esta%20speed.lua"))
-    if speedScript then
-        speedScript()
-    else
-        warn("Failed to load the Speed script")
-    end
-end
-
--- Function to load and execute the Super Speed script
-local function loadSuperSpeedScript()
-    superSpeedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/Super-Speed-ESTA-/main/Super%20Speed%20Esta.lua"))
-    if superSpeedScript then
-        superSpeedScript()
-    else
-        warn("Failed to load the Super Speed script")
-    end
-end
-
 
 -- Create a window
 local Window = OrionLib:MakeWindow({
@@ -244,12 +220,11 @@ Section1_Tab3:AddToggle({
     Callback = function(Value)
         if Value then
             -- Load and execute the Speed script
-            loadSpeedScript()
+            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Speed-ESTA/main/Esta%20speed"
+            loadstring(game:HttpGet(scriptUrl, true))()
+            print("Speedscript executed")
         else
             -- Disable the loaded Speed script
-            if speedScript then
-                speedScript = nil
-            end
         end
     end
 })
@@ -260,12 +235,11 @@ Section1_Tab3:AddToggle({
     Callback = function(Value)
         if Value then
             -- Load and execute the Super Speed script
-            loadSuperSpeedScript()
+            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Super-Speed-ESTA-/main/Super%20Speed%20Esta"
+            loadstring(game:HttpGet(scriptUrl, true))()
+            print("Speedscript executed")
         else
             -- Disable the loaded Super Speed script
-            if superSpeedScript then
-                superSpeedScript = nil
-            end
         end
     end
 })
