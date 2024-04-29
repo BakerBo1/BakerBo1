@@ -219,36 +219,20 @@ Section7_Tab1:AddToggle({
 
 -- Add sections to Tab Three (Player)
 local Section1_Tab3 = Tab3:AddSection({
-    Name = "Speed"
+    Name = "Player Actions"
 })
 
--- Add UI elements to Player Settings section
+-- Add UI elements to Player Actions section
 Section1_Tab3:AddToggle({
-    Name = "Speed",
+    Name = "Toggle TP Walk",
     Default = false,
     Callback = function(Value)
         if Value then
-            -- Load and execute the Speed script
-            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Speed-ESTA/main/Esta%20speed.lua"
-            loadstring(game:HttpGet(scriptUrl, true))()
-            print("Speed script executed")
+            -- Load and execute the TP Walk script
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/Tpwalk.V4/main/TpWalkV4"))()
+            print("TP Walk script executed")
         else
-            -- Add code here to disable the loaded Speed script if necessary
-        end
-    end
-})
-
-Section1_Tab3:AddToggle({
-    Name = "Super Speed",
-    Default = false,
-    Callback = function(Value)
-        if Value then
-            -- Load and execute the Super Speed script
-            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Super-Speed-ESTA-/main/Super%20Speed%20Esta.lua"
-            loadstring(game:HttpGet(scriptUrl, true))()
-            print("Super Speed script executed")
-        else
-            -- Add code here to disable the loaded Super Speed script if necessary
+            -- Add code here to revert any changes made by the TP Walk script if necessary
         end
     end
 })
