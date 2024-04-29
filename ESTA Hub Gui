@@ -1,7 +1,6 @@
 -- Load the Orion Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-
 -- Create a window
 local Window = OrionLib:MakeWindow({
     Name = "Esta Hub - BakerBoi384",
@@ -34,19 +33,19 @@ local Tab4 = Window:MakeTab({
     PremiumOnly = false
 })
 
-local Tab5= Window:MakeTab({
+local Tab5 = Window:MakeTab({
     Name = "Visual",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Tab6= Window:MakeTab({
+local Tab6 = Window:MakeTab({
     Name = "Toggles",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
-local Tab7= Window:MakeTab({
+local Tab7 = Window:MakeTab({
     Name = "Misc",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
@@ -80,7 +79,6 @@ local Section6_Tab1 = Tab1:AddSection({
 local Section7_Tab1 = Tab1:AddSection({
     Name = "Miscellaneous Features"
 })
-
 
 -- Define a variable to hold the loaded No Clip script
 local noClipScript
@@ -276,7 +274,6 @@ local function loadScript()
         warn("Failed to load the script")
     end
 end
-})
 
 -- Add UI elements to Locks section
 Section1_Tab4:AddToggle({
