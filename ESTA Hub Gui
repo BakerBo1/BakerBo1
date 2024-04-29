@@ -246,6 +246,10 @@ local Section2_Tab4 = Tab4:AddSection({
     Name = "Esp"
 })
 
+local Section3_Tab4 = Tab4:AddSection({
+    Name = "Script"
+})
+
 -- Define a variable to hold the loaded script
 local loadedScript
 
@@ -281,6 +285,22 @@ Section2_Tab4:AddToggle({
         -- Add your code here to toggle ESP functionality
     end
 })
+
+-- Add UI elements to Locks section
+Section3_Tab4:AddToggle({
+    Name = "Swag Mode",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Load and execute the Swag Mode script
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002"))()
+            print("Swag Mode script executed")
+        else
+            -- Add code here to revert any changes made by the Swag Mode script if necessary
+        end
+    end
+})
+
 
 -- Add sections to Tab Five (Visual)
 local Section1_Tab5 = Tab5:AddSection({
