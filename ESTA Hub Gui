@@ -270,6 +270,7 @@ local function loadScript()
         warn("Failed to load the script")
     end
 end
+})
 
 -- Add UI elements to Locks section
 Section1_Tab4:AddToggle({
