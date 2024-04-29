@@ -242,5 +242,51 @@ Section2_Tab3:AddSlider({
     end
 })
 
+-- Add sections to Tab Four (Lock/Esp)
+local Section1_Tab4 = Tab4:AddSection({
+    Name = "Locks"
+})
+
+local Section2_Tab4 = Tab4:AddSection({
+    Name = "Esp"
+})
+
+-- Define a variable to hold the loaded script
+local loadedScript
+
+-- Function to load and execute the provided script
+local function loadScript()
+    loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma.lua", true))
+    if loadedScript then
+        loadedScript()
+    else
+        warn("Failed to load the script")
+    end
+end
+
+-- Add UI elements to Locks section
+Section1_Tab4:AddToggle({
+    Name = "Aura x skid ez remake by k0nkx",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Load and execute the provided script
+            loadScript()
+        else
+            -- Disable the loaded script
+            loadedScript = nil
+        end
+    end
+})
+
+-- Add UI elements to ESP section
+Section2_Tab4:AddToggle({
+    Name = "ESP Toggle",
+    Default = false,
+    Callback = function(Value)
+        -- Add your code here to toggle ESP functionality
+    end
+})
+
 -- Initialize the Orion Library
 OrionLib:Init()
