@@ -158,7 +158,7 @@ Section5_Tab1:AddColorpicker({
 
 -- Anti-Cheat Bypass Section
 Section6_Tab1:AddToggle({
-    Name = Chat-Bypass",
+    Name = "Anti-Cheat Bypass",
     Default = false,
     Callback = function(Value)
         -- Add code here to bypass anti-cheat measures
@@ -174,7 +174,7 @@ Section7_Tab1:AddToggle({
     end
 })
 
--- Add a toggle for No Clip
+-- Add a toggle for No Clip to the appropriate section
 Section7_Tab1:AddToggle({
     Name = "No Clip",
     Default = false,
@@ -196,7 +196,7 @@ Section7_Tab1:AddToggle({
     end
 })
 
--- Add a toggle for Chatspy
+-- Add a toggle for Chatspy to the appropriate section
 Section7_Tab1:AddToggle({
     Name = "Chatspy",
     Default = false,
@@ -211,7 +211,6 @@ Section7_Tab1:AddToggle({
         end
     end
 })
-
 
 -- Add sections to Tab Three
 local Section1_Tab3 = Tab3:AddSection({
