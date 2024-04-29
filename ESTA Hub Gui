@@ -3,7 +3,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 -- Create a window
 local Window = OrionLib:MakeWindow({
-    Name = "Esta Hub - BakerBoi384",
+    Name = "Esta Hub - @FortniteCock911 on Tiktok",
     SaveConfig = true,
     ConfigFolder = "MyComplexScriptConfig"
 })
