@@ -266,10 +266,9 @@ Section1_Tab4:AddToggle({
     Callback = function(Value)
         if Value then
             -- Load and execute the provided script
-            loadScript()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma"))()
         else
             -- Disable the loaded script
-            loadedScript = nil
         end
     end
 })
