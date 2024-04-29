@@ -41,6 +41,12 @@ local Tab5= Window:MakeTab({
 })
 
 local Tab6= Window:MakeTab({
+    Name = "Toggles",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+local Tab7= Window:MakeTab({
     Name = "Misc",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
