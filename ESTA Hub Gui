@@ -212,35 +212,63 @@ Section7_Tab1:AddToggle({
     end
 })
 
--- Add sections to Tab Three
 local Section1_Tab3 = Tab3:AddSection({
-    Name = "Section 1 - Tab Three"
+    Name = "Player Settings"
 })
 
-local Section2_Tab3 = Tab3:AddSection({
-    Name = "Section 2  - Tab Three"
-})
+-- Define variables to hold the loaded scripts
+local speedScript
+local superSpeedScript
 
--- Add UI elements to Tab Three sections
-Section1_Tab3:AddSlider({
-    Name = "Player Speed",
-    Min = 0,
-    Max = 1000,
-    Default = 250,
+-- Function to load and execute the Speed script
+local function loadSpeedScript()
+    speedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/Speed-ESTA/main/Esta%20speed.lua"))
+    if speedScript then
+        speedScript()
+    else
+        warn("Failed to load the Speed script")
+    end
+end
+
+-- Function to load and execute the Super Speed script
+local function loadSuperSpeedScript()
+    superSpeedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/Super-Speed-ESTA-/main/Super%20Speed%20Esta.lua"))
+    if superSpeedScript then
+        superSpeedScript()
+    else
+        warn("Failed to load the Super Speed script")
+    end
+end
+
+-- Add UI elements to Player Settings section
+Section1_Tab3:AddToggle({
+    Name = "Speed",
+    Default = false,
     Callback = function(Value)
-        print("Slider 1 value changed to:", Value)
+        if Value then
+            -- Load and execute the Speed script
+            loadSpeedScript()
+        else
+            -- Disable the loaded Speed script
+            speedScript = nil
+        end
     end
 })
 
-Section2_Tab3:AddSlider({
-    Name = "Jump Power",
-    Min = 0,
-    Max = 500,
-    Default = 100,
+Section1_Tab3:AddToggle({
+    Name = "Super Speed",
+    Default = false,
     Callback = function(Value)
-        print("Slider 1 value changed to:", Value)
+        if Value then
+            -- Load and execute the Super Speed script
+            loadSuperSpeedScript()
+        else
+            -- Disable the loaded Super Speed script
+            superSpeedScript = nil
+        end
     end
 })
+
 
 -- Add sections to Tab Four (Lock/Esp)
 local Section1_Tab4 = Tab4:AddSection({
