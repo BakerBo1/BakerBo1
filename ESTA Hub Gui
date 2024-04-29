@@ -213,16 +213,16 @@ Section7_Tab1:AddToggle({
 })
 
 
--- Add sections to Tab Two
-local Section1_Tab3 = Tab2:AddSection({
+-- Add sections to Tab Three
+local Section1_Tab3 = Tab3:AddSection({
     Name = "Section 1 - Tab Three"
 })
 
-local Section2_Tab3 = Tab2:AddSection({
-    Name = "Section  - Tab Three"
+local Section2_Tab3 = Tab3:AddSection({
+    Name = "Section 2  - Tab Three"
 })
 
--- Add UI elements to Tab Two sections
+-- Add UI elements to Tab Three sections
 Section1_Tab3:AddSlider({
     Name = "Player Speed",
     Min = 0,
@@ -240,26 +240,6 @@ Section2_Tab3:AddSlider({
     Default = 100,
     Callback = function(Value)
         print("Slider 1 value changed to:", Value)
-    end
-})
-
--- Add sections to Tab Four
-local Section1_Tab4 = Tab3:AddSection({
-    Name = "Section 1 - Tab Four"
-})
-
-local Section2_Tab3 = Tab3:AddSection({
-    Name = "Section 2 - Tab Four"
-})
-
--- Add UI elements to Tab Three sections
-Section1_Tab3:AddLabel("Label 1 - Section 1")
-
-Section2_Tab4:AddColorpicker({
-    Name = "Colorpicker 1 - Section 2",
-    Default = Color3.fromRGB(255, 0, 0),
-    Callback = function(Value)
-        print("Colorpicker 1 value changed to:", Value)
     end
 })
 
