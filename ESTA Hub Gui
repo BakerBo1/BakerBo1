@@ -223,6 +223,14 @@ Section1_Tab3:AddToggle({
     Name = "Speed",
     Default = false,
     Callback = function(Value)
+        if Value then
+            -- Load and execute the Speed script
+            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Speed-ESTA/main/Esta%20speed.lua"
+            loadstring(game:HttpGet(scriptUrl, true))()
+            print("Speed script executed")
+        else
+            -- Add code here to disable the loaded Speed script if necessary
+        end
     end
 })
 
@@ -230,6 +238,14 @@ Section1_Tab3:AddToggle({
     Name = "Super Speed",
     Default = false,
     Callback = function(Value)
+        if Value then
+            -- Load and execute the Super Speed script
+            local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Super-Speed-ESTA-/main/Super%20Speed%20Esta.lua"
+            loadstring(game:HttpGet(scriptUrl, true))()
+            print("Super Speed script executed")
+        else
+            -- Add code here to disable the loaded Super Speed script if necessary
+        end
     end
 })
 
