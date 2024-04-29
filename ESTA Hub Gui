@@ -282,5 +282,25 @@ Section2_Tab4:AddToggle({
     end
 })
 
+-- Add sections to Tab Five (Visual)
+local Section1_Tab5 = Tab5:AddSection({
+    Name = "Visual Options"
+})
+
+-- Add UI elements to Visual Options section
+Section1_Tab5:AddToggle({
+    Name = "Toggle Stretched Resolution",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Load and execute the Stretched Resolution script
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/StretchedRes1/main/Stretched.Res.BakerBoi384"))()
+            print("Stretched Resolution script executed")
+        else
+            -- Add code here to revert any changes made by the Stretched Resolution script if necessary
+        end
+    end
+})
+
 -- Initialize the Orion Library
 OrionLib:Init()
