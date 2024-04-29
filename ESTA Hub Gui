@@ -222,9 +222,9 @@ Section1_Tab3:AddToggle({
             -- Load and execute the Speed script
             local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Speed-ESTA/main/Esta%20speed"
             loadstring(game:HttpGet(scriptUrl, true))()
-            print("Speedscript executed")
+            print("Speed script executed")
         else
-            -- Disable the loaded Speed script
+            -- You can add code here to disable the loaded Speed script if necessary
         end
     end
 })
@@ -237,9 +237,9 @@ Section1_Tab3:AddToggle({
             -- Load and execute the Super Speed script
             local scriptUrl = "https://raw.githubusercontent.com/BakerBo1/Super-Speed-ESTA-/main/Super%20Speed%20Esta"
             loadstring(game:HttpGet(scriptUrl, true))()
-            print("Speedscript executed")
+            print("Super Speed script executed")
         else
-            -- Disable the loaded Super Speed script
+            -- You can add code here to disable the loaded Super Speed script if necessary
         end
     end
 })
