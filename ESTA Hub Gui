@@ -213,6 +213,10 @@ Section7_Tab1:AddToggle({
     end
 })
 
+-- Add sections to Tab Four (Lock/Esp)
+local Section1_Tab3 = Tab3:AddSection({
+    Name = "Speed"
+
 -- Add UI elements to Player Settings section
 Section1_Tab3:AddToggle({
     Name = "Speed",
