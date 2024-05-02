@@ -259,7 +259,7 @@ local loadedScript
 
 -- Function to load and execute the provided script
 local function loadScript()
-    loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma.lua", true))
+    loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/BakerBo1/Esta-lock/main/Esta-Hub.cc"))(), true))
     if loadedScript then
         loadedScript()
     else
@@ -269,7 +269,7 @@ end
 
 -- Add UI elements to Locks section
 Section1_Tab4:AddToggle({
-    Name = "Aura x skid ez remake by k0nkx",
+    Name = "Esta-Hub.cc by @fortnitecock911 on tiktok",
     Default = false,
     Callback = function(Value)
         if Value then
